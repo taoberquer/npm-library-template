@@ -1,0 +1,63 @@
+{
+  "name": "@taoberquer/npm-library-template",
+  "version": "0.1.0",
+  "description": "TypeScript library template for the course 'Architecture open source : Création et publication d'une librairie'",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm run test:run && npm run lint && npm run typecheck"
+  },
+  "keywords": [
+    "typescript",
+    "library",
+    "npm"
+  ],
+  "author": "Tao Berquer <tao.berquer@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taoberquer/npm-library-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/taoberquer/npm-library-template/issues"
+  },
+  "homepage": "https://github.com/taoberquer/npm-library-template#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "@vitest/coverage-v8": "^1.2.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11",
+    "vite-plugin-dts": "^3.7.0",
+    "vitest": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
